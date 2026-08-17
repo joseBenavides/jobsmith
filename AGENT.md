@@ -34,6 +34,7 @@ Rules of the model:
 |---|---|
 | onboard | v0 complete: environment check, resume intake (multi-version), career read-back, adjacent-role proposals, goals interview, brag doc interview, positioning draft, title atlas + channel research, tracker setup. Proxy mode supported; resumable throughout. |
 | tracker | v0: Notion database auto-create or my/pipeline.csv + generated dashboard. Model and reconcile rules in docs/pipeline.md. |
+| tailor | v0: JD decode with honest gap mapping, tailored resume (md + ATS-safe HTML), cover letter, kit log; flips the row to Tailored. Drafts only. |
 | brag doc | not built yet |
 | tailor | not built yet |
 | source | not built yet |

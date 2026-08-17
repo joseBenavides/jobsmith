@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume</title>
+<!--
+  Jobsmith resume template. ATS-safe by design: single column, semantic
+  headings, standard fonts, no tables, no graphics, no color dependence.
+  The agent replaces the sample content; structure and styles stay.
+  Print to PDF from any browser (margins are set for Letter/A4).
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 10.5pt; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #111; background: #fff;
+    max-width: 7.5in; margin: 0 auto; padding: 0.6in 0.25in;
+    line-height: 1.35;
+  }
+  header { text-align: center; margin-bottom: 14pt; }
+  h1 { font-size: 17pt; letter-spacing: 0.5pt; }
+  .contact { font-size: 9.5pt; margin-top: 3pt; }
+  .contact span + span::before { content: " \00b7  "; }
+  h2 {
+    font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1pt;
+    border-bottom: 1pt solid #111; margin: 12pt 0 6pt; padding-bottom: 2pt;
+  }
+  .summary { margin-bottom: 2pt; }
+  .role { margin-bottom: 8pt; }
+  .role-head { display: flex; justify-content: space-between; flex-wrap: wrap; }
+  .role-title { font-weight: bold; }
+  .role-dates { font-style: italic; }
+  .role-org { font-style: italic; }
+  ul { margin: 3pt 0 0 16pt; }
+  li { margin-bottom: 2pt; }
+  .skills p, .education p { margin-bottom: 3pt; }
+  @media print {
+    body { padding: 0; max-width: none; }
+    @page { margin: 0.6in 0.7in; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Full Name</h1>
+  <div class="contact">
+    <span>City, ST</span><span>email@example.com</span><span>555 555 5555</span><span>linkedin.com/in/example</span>
+  </div>
+</header>
+
+<section class="summary">
+  <h2>Summary</h2>
+  <p>Two or three lines. Who they are at their best, aimed at this role, every word defensible.</p>
+</section>
+
+<section class="experience">
+  <h2>Experience</h2>
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Role Title</span>
+      <span class="role-dates">2020 to Present</span>
+    </div>
+    <div class="role-org">Company, City, ST</div>
+    <ul>
+      <li>Accomplishment with its verified metric, leading with what changed.</li>
+      <li>Second accomplishment. Scope numbers (team, budget, geography) live here too.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="education">
+  <h2>Education</h2>
+  <p>Degree, Institution</p>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <p>Comma-separated, mirroring the JD's truthful matches first.</p>
+</section>
+</body>
+</html>
