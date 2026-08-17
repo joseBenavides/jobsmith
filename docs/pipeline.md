@@ -29,7 +29,7 @@ Reasons are data. Three `rejected-at-screen` in a row on one track is a resume p
 | Column | Type | Notes |
 |---|---|---|
 | Role | title/text | "Role Title" |
-| Company | text | In Notion mode, write it as an inline link to the company homepage ("[Acme](https://acme.com)" in markdown terms): readable name, clickable through. CSV mode keeps it plain text |
+| Company | text | In Notion mode, write it as an inline link to the company homepage ("[Acme](https://acme.com)" in markdown terms): readable name, clickable through. The URL must be verified, never guessed (hard rule in AGENT.md; company domains are full of lookalikes). CSV mode keeps it plain text |
 | Track | select | The user's track names from `my/profile.md` |
 | Status | select | See above |
 | Fit Score | number 1-5 | Agent's honest read against the profile |
