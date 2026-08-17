@@ -62,7 +62,8 @@ If a Closed row is missing its reason, ask once, casually, and record it. Never 
 
 Created automatically during onboarding when a Notion connector is present. Build:
 
-- A database named "Job Pipeline" with the columns above (Status, Track, and Closed Reason as selects with the exact option lists).
+- **First, a parent page named "Jobsmith"** (standalone private page; the user can move it wherever they like). Everything Jobsmith creates in Notion lives under this page, so it can never touch or crowd anything else in the user's workspace. If the page already exists, reuse it.
+- Inside it, a database named "Job Pipeline" with the columns above (Status, Track, and Closed Reason as selects with the exact option lists).
 - Views, if the connector supports creating them: **Board by Status** (the main surface) · **Active** (table, Status is not Closed) · **Action due** (table, Next Action Date is not empty, sorted ascending) · **Closed** (table, for the record).
 - Store the database ID in `my/state.json` so future sessions find it without searching.
 
