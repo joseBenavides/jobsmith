@@ -1,0 +1,6 @@
+# Everything personal lives in my/ and never enters git.
+my/*
+!my/README.md
+
+# Generated working artifacts
+generated/
