@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jobsmith Pipeline</title>
+<style>
+  :root {
+    --bg: #fafafa; --card: #ffffff; --text: #1a1a1a; --muted: #666;
+    --line: #e2e2e2; --accent: #2563eb; --due: #b45309; --due-bg: #fef3c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111418; --card: #1a1f26; --text: #e8e8e8; --muted: #9aa2ad;
+      --line: #2a323c; --accent: #60a5fa; --due: #fbbf24; --due-bg: #3a2f10;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 1.5rem; background: var(--bg); color: var(--text);
+         font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 1.3rem; margin: 0 0 0.25rem; }
+  .sub { color: var(--muted); font-size: 0.85rem; margin-bottom: 1rem; }
+  .counts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .count { background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+           padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; }
+  .count b { font-size: 1.05rem; }
+  .count.on { border-color: var(--accent); outline: 1px solid var(--accent); }
+  .controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  input, select { background: var(--card); color: var(--text); border: 1px solid var(--line);
+                  border-radius: 8px; padding: 0.45rem 0.6rem; font-size: 0.9rem; }
+  input { flex: 1; min-width: 180px; }
+  .wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 900px; }
+  th, td { text-align: left; padding: 0.55rem 0.7rem; border-bottom: 1px solid var(--line);
+           font-size: 0.88rem; vertical-align: top; }
+  th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted);
+       font-weight: 600; position: sticky; top: 0; background: var(--card); }
+  th .dir { color: var(--accent); }
+  tr.due td { background: var(--due-bg); }
+  td.due-date { color: var(--due); font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px;
+          border: 1px solid var(--line); font-size: 0.78rem; white-space: nowrap; }
+  .empty { padding: 2rem; text-align: center; color: var(--muted); }
+</style>
+</head>
+<body>
+<h1>Jobsmith Pipeline</h1>
+<div class="sub">Read-only view. Make changes in your tracker; Jobsmith regenerates this page.</div>
+<div class="counts" id="counts"></div>
+<div class="controls">
+  <input id="q" type="search" placeholder="Search role, company, notes...">
+  <select id="fStatus"><option value="">All statuses</option></select>
+  <select id="fTrack"><option value="">All tracks</option></select>
+</div>
+<div class="wrap">
+  <table>
+    <thead><tr id="head"></tr></thead>
+    <tbody id="body"></tbody>
+  </table>
+  <div class="empty" id="empty" hidden>No rows match.</div>
+</div>
+<script>
+const ROWS = /*JOBSMITH_ROWS*/[];
+const STATUSES = ["Sourced","Approved","Tailored","Applied","Interviewing","Offer","Closed"];
+const COLS = [
+  ["role","Role"],["company","Company"],["track","Track"],["status","Status"],
+  ["fit","Fit"],["location","Location"],["next_action","Next Action"],
+  ["next_action_date","Due"],["date_applied","Applied"],["link","Link"]
+];
+const today = new Date().toISOString().slice(0,10);
+let sortKey = "next_action_date", sortAsc = true, statusPick = "";
+
+const $ = id => document.getElementById(id);
+const head = $("head");
+COLS.forEach(([k,label]) => {
+  const th = document.createElement("th");
+  th.dataset.k = k; th.textContent = label;
+  th.onclick = () => { sortAsc = (sortKey === k) ? !sortAsc : true; sortKey = k; render(); };
+  head.appendChild(th);
+});
+STATUSES.forEach(s => $("fStatus").add(new Option(s, s)));
+[...new Set(ROWS.map(r => r.track).filter(Boolean))].sort()
+  .forEach(t => $("fTrack").add(new Option(t, t)));
+$("q").oninput = render; $("fStatus").onchange = () => { statusPick = ""; render(); }; $("fTrack").onchange = render;
+
+function isDue(r) {
+  return r.next_action_date && r.next_action_date <= today && r.status !== "Closed";
+}
+function render() {
+  const q = $("q").value.toLowerCase();
+  const fs = statusPick || $("fStatus").value, ft = $("fTrack").value;
+  let rows = ROWS.filter(r =>
+    (!fs || r.status === fs) && (!ft || r.track === ft) &&
+    (!q || JSON.stringify(r).toLowerCase().includes(q)));
+  rows.sort((a,b) => {
+    const va = a[sortKey] ?? "", vb = b[sortKey] ?? "";
+    return (va < vb ? -1 : va > vb ? 1 : 0) * (sortAsc ? 1 : -1);
+  });
+  head.querySelectorAll("th").forEach(th => {
+    th.innerHTML = COLS.find(c => c[0] === th.dataset.k)[1] +
+      (th.dataset.k === sortKey ? ' <span class="dir">' + (sortAsc ? "▲" : "▼") + "</span>" : "");
+  });
+  const counts = $("counts"); counts.innerHTML = "";
+  const dueN = ROWS.filter(isDue).length;
+  const mk = (label, n, val) => {
+    const d = document.createElement("div");
+    d.className = "count" + (statusPick === val && val ? " on" : "");
+    d.innerHTML = "<b>" + n + "</b> " + label;
+    d.onclick = () => { statusPick = (statusPick === val) ? "" : val; $("fStatus").value = ""; render(); };
+    counts.appendChild(d);
+  };
+  mk("total", ROWS.length, "");
+  STATUSES.forEach(s => { const n = ROWS.filter(r => r.status === s).length; if (n) mk(s, n, s); });
+  if (dueN) { const d = document.createElement("div"); d.className = "count";
+    d.innerHTML = "<b>" + dueN + "</b> action due"; d.style.borderColor = "var(--due)"; counts.appendChild(d); }
+  const body = $("body"); body.innerHTML = "";
+  rows.forEach(r => {
+    const tr = document.createElement("tr");
+    if (isDue(r)) tr.className = "due";
+    COLS.forEach(([k]) => {
+      const td = document.createElement("td");
+      if (k === "link" && r.link) td.innerHTML = '<a href="' + r.link + '" target="_blank" rel="noopener">posting</a>';
+      else if (k === "status") td.innerHTML = '<span class="pill">' +
+        (r.status || "") + (r.status === "Closed" && r.closed_reason ? ": " + r.closed_reason : "") + "</span>";
+      else if (k === "next_action_date" && isDue(r)) { td.textContent = r[k]; td.className = "due-date"; }
+      else td.textContent = r[k] ?? "";
+      tr.appendChild(td);
+    });
+    body.appendChild(tr);
+  });
+  $("empty").hidden = rows.length > 0;
+}
+render();
+</script>
+</body>
+</html>

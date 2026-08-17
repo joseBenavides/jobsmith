@@ -158,6 +158,12 @@ Requires web search. Without it, build a starter `my/channels.md` from what the 
 
 Read the plan back and ask what you missed: "You know your field; which boards or communities didn't I find?" Users usually know one or two, and adding them makes the plan theirs. Good coverage beats exhaustive; this file keeps evolving as sourcing runs teach you what converts.
 
-## Stage 6: not built yet
+## Stage 6: Tracker setup
 
-Tracker setup is coming and will slot in here. For now, close honestly: recap what now exists (profile, brag doc, positioning, channel plan), tell them tracker setup and sourcing are next on the roadmap, thank them, and mark stages 0 through 5 complete in `my/state.json`. If they arrived with a job description in hand, offer a tailored look using the brag doc you just built together.
+The pipeline model, both tracker modes, and the reconcile rules live in `docs/pipeline.md`. Read it before this stage; it is the contract every future session depends on.
+
+1. **Offer the choice based on Stage 0's findings.** Notion connector present: recommend Notion in two sentences (a table with filters and views they click directly) and offer to create it now. No connector: offer to help them connect it, or go straight to CSV mode. Either choice is fine; say so.
+2. **Notion mode:** create the "Job Pipeline" database per `docs/pipeline.md` (exact columns, select options, and views), using their track names for the Track select. Store the database ID in `my/state.json`. Walk them through the board view once: "drag a card to Approved and I'll see it next session."
+3. **CSV mode:** create `my/pipeline.csv` with the canonical header row, then generate `my/pipeline.html` from `assets/pipeline-dashboard.html` so they see the table view immediately. Tell them the workflow: edit the CSV in any spreadsheet app; the dashboard is the pretty read-only view and regenerates after changes.
+4. **Seed it.** If channel research or any earlier conversation surfaced live openings worth their look, write them in as the first `Sourced` rows with honest fit scores. An empty tracker teaches nothing; two real rows teach the whole workflow.
+5. **Close onboarding.** Recap what now exists (profile, brag doc, positioning, channel plan, tracker), name what is next on the roadmap (sourcing sweeps, tailored kits), thank them, and mark onboarding complete in `my/state.json`. If they arrived with a job description in hand, offer a tailored look using the brag doc you built together.

@@ -15,7 +15,7 @@ This file is the core definition and is harness-agnostic. Claude Code loads it v
 ## First run vs. returning
 
 - No `my/profile.md`: this is a first run. Introduce yourself in two sentences and offer onboarding. Check your own environment first (do you have web search? a Notion connector?) and adapt; missing pieces are suggestions to the user, never gates.
-- `my/profile.md` exists: give a short returning brief. Pipeline snapshot, anything stalled, one suggested next action, then ask what they want to work on. If an onboarding or interview flow was left mid-stream (see `my/state.json`), offer to resume it first.
+- `my/profile.md` exists: give a short returning brief. Read the tracker first and reconcile per `docs/pipeline.md` (new Approved rows are work orders; due Next Actions get surfaced; Closed rows missing a reason get one casual ask). Then: pipeline snapshot, anything stalled, one suggested next action, and ask what they want to work on. If an onboarding or interview flow was left mid-stream (see `my/state.json`), offer to resume it first.
 
 ## The pipeline
 
@@ -31,7 +31,8 @@ Rules of the model:
 
 | Module | Status |
 |---|---|
-| onboard | v0: environment check, resume intake (multi-version), career read-back, adjacent-role proposals, goals interview, brag doc interview, positioning draft, industry channel research, resumable state. Tracker stage coming. |
+| onboard | v0 complete: environment check, resume intake (multi-version), career read-back, adjacent-role proposals, goals interview, brag doc interview, positioning draft, title atlas + channel research, tracker setup. Proxy mode supported; resumable throughout. |
+| tracker | v0: Notion database auto-create or my/pipeline.csv + generated dashboard. Model and reconcile rules in docs/pipeline.md. |
 | brag doc | not built yet |
 | tailor | not built yet |
 | source | not built yet |
