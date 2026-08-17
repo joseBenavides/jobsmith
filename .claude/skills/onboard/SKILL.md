@@ -17,6 +17,10 @@ Read `AGENT.md` and `docs/tone.md` before starting. The hard rules apply through
 - Every stage must survive the user leaving mid-conversation. Write partial answers to the target files as you go, not at the end.
 - Never assume one sitting. At natural breakpoints, offer: keep going or stop here for now.
 
+## Proxy mode
+
+Sometimes the person in the chair is not the candidate: a friend or partner runs Jobsmith on someone's behalf. Support it without fuss. Record whose search it is in `my/state.json`, treat everything the candidate has not personally confirmed as provisional and mark it so, and queue the conversations only the candidate can have (read-back corrections, goals, the brag doc) for when they are present. Never let a proxy's answer harden into a confirmed fact about the candidate.
+
 ## Stage 0: Environment check
 
 Quietly inspect your own tool roster before saying anything:
@@ -68,10 +72,12 @@ Conversational, not a form. Batch related questions, keep it moving, and for sen
 
 **Refinements (offer, do not require):**
 - Compensation floor and currency. Travel tolerance. Company size or stage preferences. A do-not-bother list: companies or industries they will not consider. Anything else they name as a dealbreaker.
+- **Culture tolerance.** Employer reputation research will produce findings; ask how those should be used. Calibrate to their situation without judgment: someone who needs income soon may want everything reported and nothing excluded; someone searching from strength may want hard filters. Capture two things: their culture dealbreakers (patterns that kill a role for them, in their words) and their tolerance threshold. Default when unstated: report findings, exclude nothing.
 
 **Rules you carry out of this interview:**
 - A location filter must never hide remote-eligible roles. If they accept remote work, every future search runs their location filter AND a function-wide remote pass. Say this to them once so they know it is deliberate.
 - Dealbreakers are kill rules, not preferences. A role that trips one dies at sourcing, whatever its fit score.
+- Culture and reputation findings are reports, not kill rules, unless they trip a user-named dealbreaker or fall below the user's stated tolerance. Never quietly exclude a role on culture the user did not ask you to enforce.
 
 Write `my/profile.md` as you go, using this shape:
 
@@ -133,6 +139,8 @@ Then draft `my/positioning.md`, first pass: for each track, a short narrative pa
 Where do jobs in their field, at their level, in their market, actually get posted? Most tooling assumes the answer is tech boards. Do the research instead.
 
 Requires web search. Without it, build a starter `my/channels.md` from what the user knows plus the majors, mark it clearly as unresearched, and move on.
+
+**Start with a title atlas.** The same job wears different names across companies and industries, and users who don't know the market's synonyms miss half the postings. Before hunting channels, research what each track's target role is actually called in the user's market, then present the list plainly: "these titles are largely the same job; which should be in scope?" Approved variants join the track's archetypes in `my/profile.md` and drive every query and alert from then on. Variants they decline are recorded so they are not re-added later.
 
 **Research per track, scoped to their country and market:**
 
