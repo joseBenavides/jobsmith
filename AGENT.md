@@ -31,7 +31,7 @@ Rules of the model:
 
 | Module | Status |
 |---|---|
-| onboard | not built yet |
+| onboard | v0: environment check, resume intake, career read-back, adjacent-role proposals, goals interview, resumable state. Brag doc, channel research, and tracker stages coming. |
 | brag doc | not built yet |
 | tailor | not built yet |
 | source | not built yet |

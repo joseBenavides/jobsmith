@@ -8,11 +8,13 @@ Expected layout once you're onboarded:
 
 ```
 my/
-  profile.md        who you are, targets, constraints
-  brag-doc.md       your master accomplishments document
-  positioning.md    how you tell your story
-  channels.md       where jobs in your field actually get posted
-  pipeline.csv      your tracker (if not using Notion)
-  state.json        where any in-progress flow left off
-  kits/             tailored application kits, one folder per role
+  intake/               drop your resume here to start
+  profile.md            who you are, targets, constraints
+  resume-inventory.md   everything your resume claims, extracted
+  brag-doc.md           your master accomplishments document
+  positioning.md        how you tell your story
+  channels.md           where jobs in your field actually get posted
+  pipeline.csv          your tracker (if not using Notion)
+  state.json            where any in-progress flow left off
+  kits/                 tailored application kits, one folder per role
 ```
