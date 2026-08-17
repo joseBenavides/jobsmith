@@ -29,7 +29,7 @@ Reasons are data. Three `rejected-at-screen` in a row on one track is a resume p
 | Column | Type | Notes |
 |---|---|---|
 | Role | title/text | "Role Title" |
-| Company | text | |
+| Company | text | In Notion mode, write it as an inline link to the company homepage ("[Acme](https://acme.com)" in markdown terms): readable name, clickable through. CSV mode keeps it plain text |
 | Track | select | The user's track names from `my/profile.md` |
 | Status | select | See above |
 | Fit Score | number 1-5 | Agent's honest read against the profile |
@@ -65,6 +65,7 @@ Created automatically during onboarding when a Notion connector is present. Buil
 - **First, a parent page named "Jobsmith"** (standalone private page; the user can move it wherever they like). Everything Jobsmith creates in Notion lives under this page, so it can never touch or crowd anything else in the user's workspace. If the page already exists, reuse it.
 - Inside it, a database named "Job Pipeline" with the columns above (Status, Track, and Closed Reason as selects with the exact option lists).
 - Views, if the connector supports creating them: **Board by Status** (the main surface) · **Active** (table, Status is not Closed) · **Action due** (table, Next Action Date is not empty, sorted ascending) · **Closed** (table, for the record).
+- **Fix the default table view.** Notion's auto-created view lists columns alphabetically, which buries Status at the far end. Rename it "All" and set its column order to the canonical order above (Role frozen, then Company, Track, Status, Fit Score, ...). The table must read left to right in the order the user actually scans.
 - Store the database ID in `my/state.json` so future sessions find it without searching.
 
 ## CSV mode
