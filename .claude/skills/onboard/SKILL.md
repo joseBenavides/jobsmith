@@ -103,6 +103,53 @@ Accepted: ... · Declined (do not re-pitch): ...
 
 Play the finished profile back in three or four lines and get a "yes, that's right."
 
-## Stage 4 and beyond: not built yet
+## Stage 4: Brag doc interview
 
-Brag doc interview, channel research, and tracker setup are coming and will slot in here. For now, close honestly: tell them what exists today and what is next on the roadmap, thank them, and mark onboarding stages 0 through 3 complete in `my/state.json`. If they arrived with a job description in hand, offer what you can already do with the profile you now have.
+Turn the corrected inventory into `my/brag-doc.md`, the master document every resume, cover letter, and interview answer will draw from. Set expectations first: this is the highest-value conversation in Jobsmith, it takes real time, and it chunks perfectly; one role per sitting is completely fine. Offer to start with their most recent or most track-relevant role.
+
+**Depth follows relevance.** Recent roles and roles close to their tracks get the deep treatment. Older or off-track roles get compressed to their best line or two. Say this out loud so they are not bracing for a three-hour interrogation.
+
+**Per deep role, dig in this order:**
+
+1. **Scope.** Team size, budget, geography, reporting line, what they actually owned. Scope is what senior resumes live on and what people forget to state.
+2. **The claims.** For each inventory claim: the situation, what they specifically did (not "we"), what changed, and how they know. Capture story notes in situation/action/result shorthand; these become the interview story bank later.
+3. **The missing wins.** "What are you proud of from this role that is not on the page?" This single question surfaces the best material more often than any other. Ask it every time.
+4. **The hard stuff, gently.** Why they left. One failure or conflict worth owning. Frame it honestly: "an interviewer will ask; better to build the answer here." One or two per role, no digging past what they offer.
+
+**Verification discipline (this is the product's honesty promise, applied):**
+
+- Every number gets a source question: "how do you know it was 30%?"
+- Sourced and confident: record as fact. Recalled and plausible: record with a `~` and the word estimate. Unverifiable: keep the claim qualitative rather than inventing precision.
+- An estimate must never harden into a fact in any downstream artifact. The brag doc's tags are what enforce that.
+
+**Correct in both directions.** When their telling is bigger than their resume's words, offer the stronger true framing and let them approve the wording. When a claim cannot survive the source question, soften it to what can. Both moves are the job.
+
+**Write `my/brag-doc.md` as you go**: one section per role (title, employer, dates, one scope line), accomplishments under it (claim, metric with source tag, story notes), a hard-stuff note where one exists, and a closing Themes section naming the three to five threads that run across the whole career.
+
+Then draft `my/positioning.md`, first pass: for each track, a short narrative paragraph (why this person, for this kind of role), their differentiators, and a draft two-minute "tell me about yourself." Read it back and refine until they say it sounds like them. Their voice, not marketing copy.
+
+## Stage 5: Channel research
+
+Where do jobs in their field, at their level, in their market, actually get posted? Most tooling assumes the answer is tech boards. Do the research instead.
+
+Requires web search. Without it, build a starter `my/channels.md` from what the user knows plus the majors, mark it clearly as unresearched, and move on.
+
+**Research per track, scoped to their country and market:**
+
+- Niche and industry-specific job boards, and professional association boards (associations are gold in licensed fields).
+- The general boards that actually dominate their country, which are not the same everywhere.
+- Industry publications with jobs sections; specialist recruiters and staffing firms with a real presence in the field; communities where roles surface before they are posted.
+
+**Verify before listing.** Visit each candidate channel and confirm it is live and actually carries relevant roles at their level. Never list a board from memory alone; memory of niche boards is exactly where stale, dead, or wrong links come from.
+
+**Write `my/channels.md`:**
+
+- Per track: primary channels with a suggested check cadence, then secondary channels worth an occasional look.
+- **LinkedIn alert queries, exact strings**: for each track, one location-scoped set and one remote set. A location filter must never hide remote-eligible roles, so both always exist. Include click-by-click setup steps and where the alerts should land (their inbox choice; mention the dedicated-address option in one line, their call).
+- Recruiters and communities, with a one-line note on how to approach each.
+
+Read the plan back and ask what you missed: "You know your field; which boards or communities didn't I find?" Users usually know one or two, and adding them makes the plan theirs. Good coverage beats exhaustive; this file keeps evolving as sourcing runs teach you what converts.
+
+## Stage 6: not built yet
+
+Tracker setup is coming and will slot in here. For now, close honestly: recap what now exists (profile, brag doc, positioning, channel plan), tell them tracker setup and sourcing are next on the roadmap, thank them, and mark stages 0 through 5 complete in `my/state.json`. If they arrived with a job description in hand, offer a tailored look using the brag doc you just built together.
