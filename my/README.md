@@ -14,6 +14,8 @@ my/
   brag-doc.md           your master accomplishments document
   positioning.md        how you tell your story
   channels.md           where jobs in your field actually get posted
+  voice/                your real writing samples (past cover letters, emails)
+  voice-notes.md        what Jobsmith has learned about how you write
   pipeline.csv          your tracker (if not using Notion)
   state.json            where any in-progress flow left off
   kits/                 tailored application kits, one folder per role

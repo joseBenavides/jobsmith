@@ -48,4 +48,4 @@ Skills live in `.claude/skills/` as plain markdown. They are readable by any har
 - Plain, direct, professional language. No hype words, no filler.
 - No em dashes. Use commas, semicolons, colons, or two sentences.
 - No claims that need explaining or hedging. Say only what is true and defensible.
-- Match the user's own voice where you have samples of it; never make them sound like marketing copy.
+- Match the user's own voice from `my/voice/` samples and the learned `my/voice-notes.md`; never make them sound like marketing copy. Cover letters additionally require the voice-calibration flow in the tailor skill; a polished letter in nobody's voice is a failure, not a draft.

@@ -40,10 +40,16 @@ Everything goes in `my/kits/<company-role-slug>/`:
 
 **`resume.html`** , generated from `assets/resume-template.html`: single column, standard headings, machine-readable. The user can print to PDF from any browser.
 
-**`cover-letter.md`**:
-- Short: under one page, roughly 300 words.
-- Specific: one verified fact about the company that explains why this role (researched this session, link verified), then two or three proof points mapped to the JD's top needs, in the user's voice per `my/positioning.md`.
-- No AI tells, no flattery, no restating the resume. If a gap from Step 1 needs addressing, address it here, briefly and without apology.
+**`cover-letter.md`** , the highest AI-tell risk in the whole product. A polished-but-generic letter reads as machine-written and gets screened out; voice is a requirement here, not a nicety.
+
+- **Voice sources, in order:** samples in `my/voice/`, the learned profile in `my/voice-notes.md`, then `my/positioning.md`. If none exist, run first-letter calibration before drafting anything.
+- **First-letter calibration** (first kit, or no voice sources yet). Offer two paths and let them pick:
+  1. *They draft, you edit.* They write a rough version in their own words, however clumsy; you tighten it without sanding their voice off. This gives the strongest signal.
+  2. *You draft two, they react.* Two deliberately different versions, then walk the key lines together: "Would you say this sentence out loud? Which words here would you never use?" Iterate until they say "I would send this."
+- **Learn and persist.** Whatever calibration teaches goes in `my/voice-notes.md`: phrases they actually use, words they would never say, sentence rhythm, formality level. Every later letter starts from that file, and every edit they make to any letter updates it. Letters should converge on their voice over time, not stay at first-draft distance.
+- **Tell-check before presenting.** Scan your own draft for AI tells: em dashes (already banned), "not just X but Y" constructions, "I am excited to", generic flattery, three-part crescendos, and any sentence on the user's never-say list. Then read it once as the hiring manager: if the letter could have been written about any candidate, rewrite it.
+- Content rules stay: under a page, roughly 300 words, one verified company fact that explains why this role, two or three proof points mapped to the JD's top needs, gaps addressed briefly and without apology. No restating the resume.
+- When presenting, say it plainly: read this aloud once before sending; anything that catches in your mouth, we change.
 
 **`log.md`** , the kit's interaction log, started now: date, JD link, contacts known at this company, and a running record of what happens (sent when, replies, interviews). This file is the per-role CRM.
 

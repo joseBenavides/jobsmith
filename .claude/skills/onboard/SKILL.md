@@ -134,6 +134,8 @@ Turn the corrected inventory into `my/brag-doc.md`, the master document every re
 
 Then draft `my/positioning.md`, first pass: for each track, a short narrative paragraph (why this person, for this kind of role), their differentiators, and a draft two-minute "tell me about yourself." Read it back and refine until they say it sounds like them. Their voice, not marketing copy.
 
+**Ask for writing samples while you are here.** Past cover letters (including ones they think failed), work emails they are proud of, anything that sounds like them, dropped into `my/voice/`. Explain why in one sentence: cover letters are the easiest place to look obviously AI-written, and real samples of their writing are the antidote. No samples is fine; the first tailored letter runs a calibration conversation instead (see the tailor skill).
+
 ## Stage 5: Channel research
 
 Where do jobs in their field, at their level, in their market, actually get posted? Most tooling assumes the answer is tech boards. Do the research instead.
