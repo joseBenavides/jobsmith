@@ -4,7 +4,8 @@ Your AI career agent. Jobsmith runs your job search the way a good talent agent 
 
 Jobsmith is not an app or a service. It is an agent definition plus a set of skills that run inside an AI coding agent such as Claude Code, on your machine, with your files. There is no server, no account, and no one between you and your search.
 
-> **Status: pre-release.** Jobsmith is being built in the open and is not ready to use yet. Watch or star the repo to catch the launch.
+> **Status: early release.** The core is built and working: onboarding, brag doc, industry channel research, pipeline tracking, and tailored application kits. Sourcing sweeps, interview prep, and negotiation are next. Expect rough edges, and please open an issue when you hit one.
+
 
 ## Who it's for
 
@@ -47,9 +48,34 @@ You manage the pipeline by clicking, not by chatting. With Notion connected, you
 
 ## Quickstart
 
-Not yet. This section will be real at launch. The short version will be: install Claude Code, download this folder, open it, and say hello. Jobsmith notices it hasn't met you and takes it from there.
+**1. Install Claude Code.** Follow [Anthropic's install guide](https://code.claude.com/docs/en/overview). Note that Claude Code requires a paid Claude plan (Pro or above); the free tier does not include it.
+
+**2. Get Jobsmith onto your machine.** Either clone it:
+
+```
+git clone https://github.com/joseBenavides/jobsmith.git
+```
+
+or use the green **Code** button above, choose **Download ZIP**, and unzip it wherever you keep documents. No git required.
+
+**3. Put your resume in the `my/intake/` folder.** Any format, any state. If you have more than one version, add them all; the differences are useful.
+
+**4. Open the folder in Claude Code and say hello.**
+
+```
+cd jobsmith
+claude
+```
+
+Then type `hello`. Jobsmith notices it hasn't met you, checks what tools it has, and offers to start onboarding. Expect the first conversation to take a while, and know that you can stop at any point and pick up later; nothing is lost.
+
+**Optional but recommended: connect Notion** before step 4. With it, Jobsmith builds your pipeline tracker for you as a real database with filtered views. Without it, you get a spreadsheet file and a dashboard, which work fine. See [Notion's MCP setup guide](https://www.notion.com/help/notion-mcp) or ask Jobsmith to walk you through it. One gotcha worth knowing: after connecting, you must explicitly grant access to the pages Jobsmith should see.
 
 Once you're running, [Using Jobsmith](docs/using-jobsmith.md) is the one page worth reading: the pipeline loop, whose move each status is, and example things you can say. You don't need to memorize any of it; Jobsmith offers the next step whenever you check in, and "what can you do?" always works.
+
+## Using a different AI
+
+Claude Code is what Jobsmith is developed and tested against. The skills are plain markdown, so other agent tools (and other models) can run them; see [other harnesses](docs/other-harnesses.md) for what any harness needs and how to adapt.
 
 ## Privacy
 
