@@ -49,6 +49,8 @@ You manage the pipeline by clicking, not by chatting. With Notion connected, you
 
 Not yet. This section will be real at launch. The short version will be: install Claude Code, download this folder, open it, and say hello. Jobsmith notices it hasn't met you and takes it from there.
 
+Once you're running, [Using Jobsmith](docs/using-jobsmith.md) is the one page worth reading: the pipeline loop, whose move each status is, and example things you can say. You don't need to memorize any of it; Jobsmith offers the next step whenever you check in, and "what can you do?" always works.
+
 ## Privacy
 
 Your profile, brag doc, pipeline, and every generated artifact live in `my/`, which is ignored by git. Nothing in this repository ever contains your personal data, and nothing is transmitted anywhere except to the LLM you chose to run it with.
