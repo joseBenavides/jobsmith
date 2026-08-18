@@ -1,6 +1,9 @@
 # Everything personal lives in my/ and never enters git.
 my/*
 !my/README.md
+!my/intake/
+my/intake/*
+!my/intake/.gitkeep
 
 # Generated working artifacts
 generated/
