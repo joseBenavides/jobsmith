@@ -35,10 +35,17 @@ Everything goes in `my/kits/<company-role-slug>/`:
 - Select, reorder, and reweight from the master materials. Never invent, never inflate. Tailoring means choosing which true things lead, not creating new ones.
 - Mirror the JD's terminology only where it is truthful ("revenue strategy" for "revenue management" is fine if that is what they did; a title change is not).
 - Claims tagged `~estimate` in the brag doc stay visibly approximate or get dropped; they never harden into precise facts here.
-- Length is a hard constraint: fit the target page count (default two pages) with margin, by cutting the least relevant material, not by shrinking fonts.
 - Writing rules from `AGENT.md` apply in full.
 
-**`resume.html`** , generated from `assets/resume-template.html`: single column, standard headings, machine-readable. The user can print to PDF from any browser.
+**`resume.html`** , generated from `assets/resume-template.html`: single column, standard headings, machine-readable. The user can print to PDF from any browser. Keep the template's draft banner, filled in with this kit's open items, until the user clears the kit to send; it is visible on screen and never prints.
+
+**Length is a hard constraint, and you must measure it, not eyeball it.** Default target is two pages. Markdown length tells you nothing about pagination, so count the rendered pages before showing the user anything:
+
+```
+msedge --headless --disable-gpu --print-to-pdf="out.pdf" --no-pdf-header-footer "file:///<abs-path>/resume.html"
+```
+
+(Or any headless browser; Chrome takes the same flags.) Count the pages in the PDF. Over target means cut the least relevant material, never shrink fonts or margins. Do not ship a resume sitting exactly on a page boundary; leave margin. If you genuinely cannot render, say so plainly and tell the user the page count is unverified rather than assuming it fits.
 
 **`cover-letter.md`** , the highest AI-tell risk in the whole product. A polished-but-generic letter reads as machine-written and gets screened out; voice is a requirement here, not a nicety.
 

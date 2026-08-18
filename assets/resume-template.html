@@ -36,13 +36,33 @@
   ul { margin: 3pt 0 0 16pt; }
   li { margin-bottom: 2pt; }
   .skills p, .education p { margin-bottom: 3pt; }
+  /*
+    Draft banner. Shown on screen so the user cannot miss open items, hidden
+    in print so it never lands on the resume itself. Delete the element when
+    the kit is cleared to send.
+  */
+  .draft-banner {
+    font-family: system-ui, sans-serif; font-size: 9.5pt; line-height: 1.4;
+    border: 1.5pt solid #b45309; background: #fef3c7; color: #7c2d12;
+    border-radius: 4pt; padding: 8pt 10pt; margin-bottom: 14pt;
+  }
+  .draft-banner b { text-transform: uppercase; letter-spacing: 0.5pt; }
   @media print {
     body { padding: 0; max-width: none; }
+    .draft-banner { display: none; }
     @page { margin: 0.6in 0.7in; }
   }
 </style>
 </head>
 <body>
+<!--
+  Keep this banner until every open item is resolved. It never prints; it
+  exists so the file cannot be opened, printed, and sent while items are open.
+-->
+<div class="draft-banner">
+  <b>Draft, not send-ready.</b> Open items: list them here (unconfirmed claims, missing
+  answers). See decode.md and log.md. This banner does not appear when printed.
+</div>
 <header>
   <h1>Full Name</h1>
   <div class="contact">
