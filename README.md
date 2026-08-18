@@ -32,10 +32,10 @@ The pipeline is the data model, not a forced path. Every module works on its own
 |---|---|
 | Onboard | First-run setup: reads your resume, interviews you about goals, researches your industry's channels, sets up your tracker |
 | Brag doc | A structured interview that turns your experience into a master document of defensible accomplishments |
+| Source | Sweeps your channel plan for roles worth your time, scores them honestly, and can run on a schedule you set |
 | Tailor | Takes a job description, produces a tailored resume and cover letter kit for your approval |
-| Source | Sweeps your channel plan for roles worth your time |
-| Interview prep | Company research and likely questions mapped to your real stories |
-| Negotiate | Offer analysis and negotiation prep |
+| Interview prep | Company research and likely questions mapped to your real stories (not built yet) |
+| Negotiate | Offer analysis and negotiation prep (not built yet) |
 
 You manage the pipeline by clicking, not by chatting. With Notion connected, your pipeline is a filtered table you toggle directly; without it, a simple spreadsheet file does the same job. Jobsmith reads your changes at the start of each session.
 
@@ -71,6 +71,10 @@ Then type `hello`. Jobsmith notices it hasn't met you, checks what tools it has,
 **Optional but recommended: connect Notion** before step 4. With it, Jobsmith builds your pipeline tracker for you as a real database with filtered views. Without it, you get a spreadsheet file and a dashboard, which work fine. See [Notion's MCP setup guide](https://www.notion.com/help/notion-mcp) or ask Jobsmith to walk you through it. One gotcha worth knowing: after connecting, you must explicitly grant access to the pages Jobsmith should see.
 
 Once you're running, [Using Jobsmith](docs/using-jobsmith.md) is the one page worth reading: the pipeline loop, whose move each status is, and example things you can say. You don't need to memorize any of it; Jobsmith offers the next step whenever you check in, and "what can you do?" always works.
+
+## How it's built
+
+[Architecture](docs/ARCHITECTURE.md) covers the design: the four layers, how state survives interrupted sessions, why the pipeline is a data model rather than a wizard, how every capability degrades instead of requiring, and why the guardrails are layered the way they are. [Philosophy](docs/philosophy.md) records the design positions behind it.
 
 ## Using a different AI
 

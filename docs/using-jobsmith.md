@@ -25,7 +25,8 @@ You make moves by editing the tracker directly: drag a card in Notion or edit th
 - "Anything due this week?"
 
 **Finding roles:**
-- "Run a sweep" - search your channels for new roles
+- "Run a sweep" - search your channels for new roles, scored, with the weak ones filtered out
+- "Sweep every morning" - set up a recurring sweep so the pipeline stays fed without you remembering
 - "What do you think of this posting? <link>"
 
 **Approved roles becoming applications:**

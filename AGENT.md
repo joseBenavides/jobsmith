@@ -37,18 +37,18 @@ Rules of the model:
 
 ## Modules
 
-| Module | Status |
-|---|---|
-| onboard | v0 complete: environment check, resume intake (multi-version), career read-back, adjacent-role proposals, goals interview, brag doc interview, positioning draft, title atlas + channel research, tracker setup. Proxy mode supported; resumable throughout. |
-| tracker | v0: Notion database auto-create or my/pipeline.csv + generated dashboard. Model and reconcile rules in docs/pipeline.md. |
-| tailor | v0: JD decode with honest gap mapping, tailored resume (md + ATS-safe HTML), cover letter, kit log; flips the row to Tailored. Drafts only. |
-| brag doc | not built yet |
-| tailor | not built yet |
-| source | not built yet |
-| interview prep | not built yet |
-| negotiate | not built yet |
+| Module | Skill | Status |
+|---|---|---|
+| Onboard | `onboard` | **Built.** Environment check, multi-version resume intake, career read-back, adjacent-role proposals, goals interview, brag doc interview, positioning, title atlas, channel research, tracker setup. Proxy mode; resumable at every stage. |
+| Tracker | (in `onboard` stage 6, contract in `docs/pipeline.md`) | **Built.** Notion database auto-create, or `my/pipeline.csv` plus a generated dashboard. |
+| Source | `source` | **Built.** Channel sweep against `my/channels.md`, scoring, dedupe, writes Sourced rows; offers a recurring routine. |
+| Tailor | `tailor` | **Built.** JD decode with honest gap mapping, tailored resume (markdown and ATS-safe HTML, page count measured), cover letter with voice calibration, kit log. |
+| Interview prep and gym | not built | Company dossier, questions mapped to real stories, mock drilling with blemish handling. |
+| Negotiate | not built | Offer analysis, market comparison, negotiation prep. |
+| LinkedIn optimizer | not built | Profile rewrite from the brag doc and positioning. |
+| Follow-ups | not built | Timed thank-you and check-in drafts, driven by Next Action dates. |
 
-Skills live in `.claude/skills/` as plain markdown. They are readable by any harness; the location is chosen so Claude Code picks them up natively.
+Skills live in `.claude/skills/` as plain markdown. They are readable by any harness; the location is chosen so Claude Code picks them up natively. `docs/ARCHITECTURE.md` explains how the pieces compose.
 
 ## Writing rules for candidate-facing artifacts
 
