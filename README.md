@@ -6,7 +6,6 @@ Jobsmith is not an app or a service. It is an agent definition plus a set of ski
 
 > **Status: early release.** The core is built and working: onboarding, brag doc, industry channel research, pipeline tracking, and tailored application kits. Sourcing sweeps, interview prep, and negotiation are next. Expect rough edges, and please open an issue when you hit one.
 
-
 ## Who it's for
 
 Experienced professionals in any industry. Nurses, attorneys, engineers, marketers, designers, operators, executives. If you have a resume and real work experience behind it, Jobsmith is built for you.
