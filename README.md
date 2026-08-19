@@ -55,7 +55,7 @@ You manage the pipeline by clicking, not by chatting. With Notion connected, you
 git clone https://github.com/joseBenavides/jobsmith.git
 ```
 
-or use the green **Code** button above, choose **Download ZIP**, and unzip it wherever you keep documents. No git required.
+or use the green **Code** button above, choose **Download ZIP**, and unzip it wherever you keep documents. No git required. (The unzipped folder is named `jobsmith-main`; rename it to `jobsmith` if you want the commands below to match exactly.)
 
 **3. Put your resume in the `my/intake/` folder.** Any format, any state. If you have more than one version, add them all; the differences are useful.
 
