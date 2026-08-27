@@ -48,6 +48,16 @@ Reasons are data. Three `rejected-at-screen` in a row on one track is a resume p
 
 Dates are `YYYY-MM-DD` in both modes.
 
+## Read rows back after writing them
+
+Whenever a module writes rows, **read them back and confirm the required fields are populated** before reporting the work as done. A write API returning success means the request was accepted, not that the row is complete.
+
+Required on any new `Sourced` row: **Role · Company · Track · Status · Fit Score · Fit Notes · Link · Location · Date Sourced.**
+
+**Link matters most.** A row the user cannot click is a row they cannot act on, so an empty link makes the row worse than useless: it occupies review attention and delivers nothing. Verify the URL resolves and points at the posting on the employer's own site before storing it, per the never-guess-a-URL rule in `AGENT.md`. If the only link you could verify is an aggregator's, store it and say so in the notes rather than leaving the field empty.
+
+This is hard rule 9 in practice. The check costs one query and catches the failure the user would otherwise find first.
+
 ## Direct manipulation and reconcile
 
 The user edits the tracker directly (toggling a Notion select, editing the CSV in any spreadsheet app). They never have to tell the agent about a change. At every session start the agent:

@@ -30,7 +30,7 @@ The cost is a real dependency: you need an agent harness. That is the trade this
 
 **Skills** are workflows. Each is a single markdown file with frontmatter describing when it applies, so a harness can select it. They are written as procedures with judgment built in, not scripts: what to do, in what order, what to refuse, and what to tell the user.
 
-**Docs** are the contracts. `pipeline.md` defines the data model both tracker modes implement. `tone.md` governs register. `philosophy.md` records design positions so contributors do not undo them by accident. Splitting contracts from workflows means two skills that touch the pipeline cannot drift apart.
+**Docs** are the contracts. `pipeline.md` defines the data model both tracker modes implement. `tone.md` governs register. `philosophy.md` records design positions so contributors do not undo them by accident. `sweep-quality.md` records the ways a sourcing run can fail while still looking successful, which is why the `source` skill checks what it checks. Splitting contracts from workflows means two skills that touch the pipeline cannot drift apart.
 
 **`my/`** is the entire state of a search: profile, brag doc, positioning, channels, voice samples, tracker, kits, and a resume-point file. It is gitignored, so updating the product with `git pull` never touches user data, and user data can never leak into a commit.
 
